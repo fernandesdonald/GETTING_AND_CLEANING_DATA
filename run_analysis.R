@@ -48,7 +48,10 @@ mean_sd_desc		<- inner_join(mean_sd, activity_labels)
 ## STEP 3A: JOIN TABLES TO DERIVE ACTIVITY LABELS
 
 ## STEP 5A: COMPUTE MEAN ON ALL VARIABLES
+
 mean_sd_desc_2		<-  mean_sd_desc %>% group_by(subject_code,activity_code,activity) %>% summarize_each(funs(mean))
 
+mean_sd_desc_3		<-  subset(mean_sd_desc_2,,-activity_code)
+
 ## STEP 5B: WRITE BACK DATA SET TO FILE
-write.table(mean_sd_desc_2, "output.txt", sep=" ", row.name=FALSE)	
+write.table(mean_sd_desc_3, "output.txt", sep=" ", row.name=FALSE)	
