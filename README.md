@@ -13,7 +13,7 @@ Overall Script Logic:
 1. Read the Lookup Files
 2. Read the Test and Train Files
 3. Combine the Test and Train Files, while maintaining the Activity and Subkect code keys
-4. Extract the Mean and STD columns
+4. Extract the Mean and STD columns. This is done by simply choosing columns which have either phrase "mean" or "std"
 5. Rollup using Summarize_Each function
 6. Validate the rows and columns counts and values independently
 7. Successful execution of the script produces an output file "output.txt", which has headers, and space delimited columns
